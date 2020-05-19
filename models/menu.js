@@ -3,39 +3,21 @@ module.exports = function(sequelize, DataTypes){
 
     var Menu = sequelize.define("Menu", {
 
-       appetizer_name : {
+       menu_item : {
            type : DataTypes.STRING,
            allowNull : false,
            validate : {
                len : [1, 100]
            }
        },
-       appetizer_price : {
-           type : DataTypes.DECIMAL,
+       item_price : {
+           type : DataTypes.DECIMAL(10,2),
            allowNull : false
        },
-       entree_name : {
-        type : DataTypes.STRING,
-        allowNull : false,
-        validate : {
-            len : [1, 100]
-        }
-    },
-        entree_price :  {
-            type : DataTypes.DECIMAL,
-            allowNull : false
-        }
-    });
-
-    Menu.associate = function(models){
-
-        Menu.belongsTo(models.Restaurant, {
-
-            foreignKey: {
-              allowNull: false
-              
-            }
-          });
-    }
-    return Menu;
+       description : {
+           type : DataTypes.STRING,
+           allowNull : false
+       }
+       });
+        return Menu;
 }
