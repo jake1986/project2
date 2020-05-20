@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "name": "ProjectTwo",
+=======
   "name": "1-passport-example",
+>>>>>>> 914db5b2cc8242f6eb3e8a3f5db0cd013ab2a460
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
