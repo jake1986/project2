@@ -5,12 +5,39 @@
   <title>Passport Authentication</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"> -->
   <link href="stylesheets/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../public/stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../public/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
+  
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="../public/index.html" class="brand-logo"><img class="car" src="https://www.newbrunswick.com/images/pub/curbside_pickup.png"></a>
+      <ul class="right hide-on-med-and-down">
+        <!-- <li><a href="#">Navbar Link</a></li> -->
+        <li><a href="../public/signup.html">Sign Up</a></li>
+        <li><a href="../public/login.html">Login</a></li>
+        <li><a href="../public/members.html">Members</a></li>
+        <li><a href="../public/order.html">Order</a></li>
+        <li><a href="../public/check-out.html"><i class="center blue-text material-icons">shopping_cart</i></a></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <!-- <li><a href="#">Navbar Link</a></li> -->
+        <li><a href="../public/signup.html">Sign Up</a></li>
+        <li><a href="../public/login.html">Login</a></li>
+        <li><a href="../public/members.html">Members</a></li>
+        <li><a href="../public/order.html">Order</a></li>
+        <li><a href="../public/check-out.html">Check-Out</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/logout">
@@ -18,7 +45,7 @@
       </a>
     </div>
   </div>
-</nav>
+</nav> -->
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
