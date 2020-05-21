@@ -1,97 +1,335 @@
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../public/stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="../public/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <title>Order: Good-To-Go</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../public/stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../public/stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <title>Order: Good-To-Go</title>
 </head>
+
 <body>
 
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
-          <a id="logo-container" href="../public/index.html" class="brand-logo"><img class="car" src="https://www.newbrunswick.com/images/pub/curbside_pickup.png"></a>
-          <ul class="right hide-on-med-and-down">
-            <!-- <li><a href="#">Navbar Link</a></li> -->
-        <!-- <li><a href="#">Navbar Link</a></li> -->
-        <li><a href="../public/signup.html">Sign Up</a></li>
-        <li><a href="../public/login.html">Login</a></li>
-        <li><a href="../public/members.html">Members</a></li>
-        <li><a href="../public/order.html">Order</a></li>
-        <li><a href="../public/check-out.html"><i class="center blue-text material-icons">shopping_cart</i></a></li>
-          </ul>
-    
-          <ul id="nav-mobile" class="sidenav">
-            <!-- <li><a href="#">Navbar Link</a></li> -->
-            <li><a href="../public/signup.html">Sign Up</a></li>
-            <li><a href="../public/login.html">Login</a></li>
-            <li><a href="../public/members.html">Members</a></li>
-            <li><a href="../public/order.html">Order</a></li>
-            <li><a href="../public/check-out.html">Check-Out</a></li>
-          </ul>
-          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a id="logo-container" href="../public/index.html" class="brand-logo"><img class="car"
+                    src="https://www.newbrunswick.com/images/pub/curbside_pickup.png"></a>
+            <ul class="right hide-on-med-and-down">
+                <!-- <li><a href="#">Navbar Link</a></li> -->
+                <!-- <li><a href="#">Navbar Link</a></li> -->
+                <li><a href="../public/signup.html">Sign Up</a></li>
+                <li><a href="../public/login.html">Login</a></li>
+                <li><a href="../public/members.html">Members</a></li>
+                <li><a href="../public/order.html">Order</a></li>
+                <li><a href="../public/check-out.html"><i class="center blue-text material-icons">shopping_cart</i></a>
+                </li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <!-- <li><a href="#">Navbar Link</a></li> -->
+                <li><a href="../public/signup.html">Sign Up</a></li>
+                <li><a href="../public/login.html">Login</a></li>
+                <li><a href="../public/members.html">Members</a></li>
+                <li><a href="../public/order.html">Order</a></li>
+                <li><a href="../public/check-out.html">Check-Out</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         </div>
-      </nav>
-  <div class="container">
-    <h2>Menu</h2>
-    <div class="row">
-      <div class="col s12 16">
-        <div class="card">
-          <div class="card-image">
-            <img src="img/curry.jpg" alt="">
-            <a href="" class="halfway-fab btn-floating pink pulse">
-              <i class="material-icons">favorite</i>
-            </a>
-            <!-- Lines 51-53 trying to add additional button to image for user to delete item -->
-            <!-- <a class="halfway-fab btn-floating pink pulse">
+    </nav>
+    <div class="container">
+        <h2>Menu</h2>
+        <div class="row">
+            <div class="col s12 16">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/img/beefbriskethash.jpeg" alt="">
+                        <a href="" class="halfway-fab btn-floating pink pulse">
+                            <i class="material-icons">favorite</i>
+                        </a>
+                        <!-- Lines 51-53 trying to add additional button to image for user to delete item -->
+                        <!-- <a class="halfway-fab btn-floating pink pulse">
                 <i class="material-icons">delete</i>
             </a> -->
-          </div>
-          <div class="card-content">
-            <span class="card-title">Mango & Chickpea Curry</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis aliquam orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-          </div>
-          <!-- <div class="card-action">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Beef Brisket Hash $13</span>
+                        <p>Smoked beef brisket hash, two eggs over easy, tomato remoulade, buttermilk biscuit</p>
+                    </div>
+                    <!-- <div class="card-action">
             <a href="">More details</a>
             <a href="">View Ingredients</a>
           </div> -->
-        </div>
-      </div>
-      <div class="col s12 16">
-        <div class="card">
-          <div class="card-image">
-            <img src="img/pasta.jpg" alt="">
-            <a href="" class="halfway-fab btn-floating pink pulse">
-              <i class="material-icons">favorite</i>
-            </a>
-            <!-- Lines 71-74 trying to add additional button to image for user to delete item -->
-            <!-- <a class="halfway-fab btn-floating pink pulse">
+                </div>
+            </div>
+            <div class="col s12 16">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/img/biscuitsngravy.jpeg" alt="">
+                        <a href="" class="halfway-fab btn-floating pink pulse">
+                            <i class="material-icons">favorite</i>
+                        </a>
+                        <!-- Lines 71-74 trying to add additional button to image for user to delete item -->
+                        <!-- <a class="halfway-fab btn-floating pink pulse">
                 <i class="material-icons">delete</i>
             </a> -->
-          </div>
-          <div class="card-content">
-            <span class="card-title">Rainbow Pasta Salad</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis aliquam orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-          </div>
-          <!-- <div class="card-action">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Biscuits N' Gravy $10</span>
+                        <p>Homemade sausage gravy, buttermilk biscuit, scrambled eggs, brunch potatoes</p>
+                    </div>
+                    <!-- <div class="card-action">
             <a href="">More details</a>
             <a href="">View Ingredients</a>
           </div> -->
+                </div>
+            </div>
         </div>
-      </div>
-      </div>
+        <div class="row">
+            <div class="col s12 16">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/img/chesapeakequiche.jpeg" alt="">
+                        <a href="" class="halfway-fab btn-floating pink pulse">
+                            <i class="material-icons">favorite</i>
+                        </a>
+                        <!-- Lines 51-53 trying to add additional button to image for user to delete item -->
+                        <!-- <a class="halfway-fab btn-floating pink pulse">
+                  <i class="material-icons">delete</i>
+              </a> -->
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Chesapeake Quiche $12</span>
+                        <p>Lump crabmeat, sautéed onions, parsley, simple green salad, fresh fruit</p>
+                    </div>
+                    <!-- <div class="card-action">
+              <a href="">More details</a>
+              <a href="">View Ingredients</a>
+            </div> -->
+                </div>
+            </div>
+            <div class="col s12 16">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/img/chickenandwaffles.jpeg" alt="">
+                        <a href="" class="halfway-fab btn-floating pink pulse">
+                            <i class="material-icons">favorite</i>
+                        </a>
+                        <!-- Lines 71-74 trying to add additional button to image for user to delete item -->
+                        <!-- <a class="halfway-fab btn-floating pink pulse">
+                  <i class="material-icons">delete</i>
+              </a> -->
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Chicken & Waffles $11</span>
+                        <p>Buttermilk ricotta waffle, fried chicken breast tenders, scallion, black pepper honey</p>
+                    </div>
+                    <!-- <div class="card-action">
+              <a href="">More details</a>
+              <a href="">View Ingredients</a>
+            </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 16">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/img/cinnamonrolls.jpeg" alt="">
+                        <a href="" class="halfway-fab btn-floating pink pulse">
+                            <i class="material-icons">favorite</i>
+                        </a>
+                        <!-- Lines 51-53 trying to add additional button to image for user to delete item -->
+                        <!-- <a class="halfway-fab btn-floating pink pulse">
+                      <i class="material-icons">delete</i>
+                  </a> -->
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Cinnamon Roll (V) $6</span>
+                        <p>Homemade cinnamon rolls, vanilla cream cheese icing</p>
+                    </div>
+                    <!-- <div class="card-action">
+                  <a href="">More details</a>
+                  <a href="">View Ingredients</a>
+                </div> -->
+                </div>
+            </div>
+            <div class="col s12 16">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/img/coffee.jpeg" alt="">
+                        <a href="" class="halfway-fab btn-floating pink pulse">
+                            <i class="material-icons">favorite</i>
+                        </a>
+                        <!-- Lines 71-74 trying to add additional button to image for user to delete item -->
+                        <!-- <a class="halfway-fab btn-floating pink pulse">
+                      <i class="material-icons">delete</i>
+                  </a> -->
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Coffee $2.50</span>
+                        <p>Blanchards Dark As Dark</p>
+                    </div>
+                    <!-- <div class="card-action">
+                  <a href="">More details</a>
+                  <a href="">View Ingredients</a>
+                </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 16">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/img/friedeggblt.jpeg" alt="">
+                        <a href="" class="halfway-fab btn-floating pink pulse">
+                            <i class="material-icons">favorite</i>
+                        </a>
+                        <!-- Lines 51-53 trying to add additional button to image for user to delete item -->
+                        <!-- <a class="halfway-fab btn-floating pink pulse">
+                        <i class="material-icons">delete</i>
+                    </a> -->
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Fried Egg BLT $10</span>
+                        <p>Fried egg, applewood smoked bacon, baby arugula, tomato, grilled sourdough, pesto mayo,
+                            brunch potatoes</p>
+                    </div>
+                    <!-- <div class="card-action">
+                    <a href="">More details</a>
+                    <a href="">View Ingredients</a>
+                  </div> -->
+                </div>
+            </div>
+            <div class="col s12 16">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="/public/img/lemonblueberrypancake.jpeg" alt="">
+                        <a href="" class="halfway-fab btn-floating pink pulse">
+                            <i class="material-icons">favorite</i>
+                        </a>
+                        <!-- Lines 71-74 trying to add additional button to image for user to delete item -->
+                        <!-- <a class="halfway-fab btn-floating pink pulse">
+                        <i class="material-icons">delete</i>
+                    </a> -->
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">Lemon Blueberry Pancakes (V) $11</span>
+                        <p>Lemon blueberry pancakes, blueberry compote, blueberry maple syrup, fresh fruit or applewood
+                            smoked bacon</p>
+                    </div>
+                    <!-- <div class="card-action">
+                    <a href="">More details</a>
+                    <a href="">View Ingredients</a>
+                  </div> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 16">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/public/img/mixyourownmimosa.jpeg" alt="">
+                            <a href="" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons">favorite</i>
+                            </a>
+                            <!-- Lines 51-53 trying to add additional button to image for user to delete item -->
+                            <!-- <a class="halfway-fab btn-floating pink pulse">
+                          <i class="material-icons">delete</i>
+                      </a> -->
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Mix Your Own Mimosa $12</span>
+                            <p>Simonet Vin Mousseux Brut, 12 oz. Tropicana orange juice</p>
+                        </div>
+                        <!-- <div class="card-action">
+                      <a href="">More details</a>
+                      <a href="">View Ingredients</a>
+                    </div> -->
+                    </div>
+                </div>
+                <div class="col s12 16">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/public/img/pimentocheeseblt.jpeg" alt="">
+                            <a href="" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons">favorite</i>
+                            </a>
+                            <!-- Lines 71-74 trying to add additional button to image for user to delete item -->
+                            <!-- <a class="halfway-fab btn-floating pink pulse">
+                          <i class="material-icons">delete</i>
+                      </a> -->
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Pimento Cheese BLT $10</span>
+                            <p>Pimento cheese, applewood smoked bacon, lettuce, tomato, avocado, grilled sourdough,
+                                brunch potatoes</p>
+                        </div>
+                        <!-- <div class="card-action">
+                      <a href="">More details</a>
+                      <a href="">View Ingredients</a>
+                    </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 16">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/public/img/shrimpbaconpestoomlet.jpeg" alt="">
+                            <a href="" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons">favorite</i>
+                            </a>
+                            <!-- Lines 51-53 trying to add additional button to image for user to delete item -->
+                            <!-- <a class="halfway-fab btn-floating pink pulse">
+                          <i class="material-icons">delete</i>
+                      </a> -->
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Shrimp Bacon Pesto Omlet (GF) $24</span>
+                            <p>Shrimp, applewood smoked bacon, red onion, gruyere, pesto, brunch potatoes</p>
+                        </div>
+                        <!-- <div class="card-action">
+                      <a href="">More details</a>
+                      <a href="">View Ingredients</a>
+                    </div> -->
+                    </div>
+                </div>
+                <div class="col s12 16">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/public/img/smokedtroutdeviledeggs.jpeg" alt="">
+                            <a href="" class="halfway-fab btn-floating pink pulse">
+                                <i class="material-icons">favorite</i>
+                            </a>
+                            <!-- Lines 71-74 trying to add additional button to image for user to delete item -->
+                            <!-- <a class="halfway-fab btn-floating pink pulse">
+                          <i class="material-icons">delete</i>
+                      </a> -->
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Smoked Trout Deviled Eggs (GF) $6</span>
+                            <p>Smoked trout, fresh dill, homemade deviled egg</p>
+                        </div>
+                        <!-- <div class="card-action">
+                      <a href="">More details</a>
+                      <a href="">View Ingredients</a>
+                    </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </div>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-  <script src="../public/js/materialize.js"></script>
-  <script src="../public/js/init.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="../public/js/materialize.js"></script>
+    <script src="../public/js/init.js"></script>
 </body>
+
 </html>
