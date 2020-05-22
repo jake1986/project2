@@ -3,7 +3,8 @@ require("dotenv").config({ path: "../.env" });
 
 const from = "13054338575";
 let msgTo = "18048140932";
-let msg = "Howdy";
+let msg = "Thank You For Your Order, It Is Now Ready For Pickup";
+let msgTo = $("#phone").val().trim();
 
 function sendMessage(msgTo, msg, cb) {
   const nexmo = new Nexmo({
@@ -30,4 +31,3 @@ function sendMessage(msgTo, msg, cb) {
 }
 
 sendMessage(msgTo, msg);
-// module.exports = sendMessage;
