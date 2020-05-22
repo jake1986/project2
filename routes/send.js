@@ -30,4 +30,7 @@ function sendMessage(msgTo, msg, cb) {
   });
 }
 
-sendMessage(msgTo, msg);
+$("#checkout").on("click", function (event) {
+  sendMessage(msgTo, msg);
+  clear();
+});
