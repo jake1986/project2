@@ -24,11 +24,10 @@ app.post("/api/order", function(req, res){
   });
   app.get("/api/order", function(req, res){
 
-    db.Orders.findAll({ include : db.User, 
-      where : {
-       id : 10
+    db.Orders.findAll({ include : db.User
       
-    }}).then(function(response){
+      
+    }).then(function(response){
       res.json(response);
     });
 
