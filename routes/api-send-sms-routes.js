@@ -2,7 +2,7 @@ const Nexmo = require("nexmo");
 // requiring connection to the .env file
 require("dotenv").config();
 
-const from = "18044338575";
+const from = "13054338575";
 const msg = "Thank You For Your Order, It Is Now Ready For Pickup";
 
 // Getting the phone number and calling the sendMessage function
