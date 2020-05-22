@@ -1,14 +1,18 @@
 const Nexmo = require("nexmo");
+require("dotenv").config({ path: "../.env" });
 
-const FROM = "13054338575";
+const from = "13054338575";
+let msgTo = "18048140932";
+let msg = "Thank You For Your Order, It Is Now Ready For Pickup";
+let msgTo = $("#phone").val().trim();
 
 function sendMessage(msgTo, msg, cb) {
   const nexmo = new Nexmo({
-    apiKey: "9578c978",
-    apiSecret: "LFqXRvA5fbDx5UVy",
+    apiKey: process.env.API_KEY,
+    apiSecret: process.env.API_SECRET,
   });
 
-  nexmo.message.sendSms(FROM, msgTo, msg, (err, responseData) => {
+  nexmo.message.sendSms(from, msgTo, msg, (err, responseData) => {
     if (err) {
       console.log(err);
     } else {
@@ -26,4 +30,4 @@ function sendMessage(msgTo, msg, cb) {
   });
 }
 
-module.exports = sendMessage;
+sendMessage(msgTo, msg);
