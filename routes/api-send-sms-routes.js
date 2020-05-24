@@ -1,17 +1,27 @@
 const Nexmo = require("nexmo");
-require("dotenv").config({ path: "../.env" });
+// requiring connection to the .env file
+require("dotenv").config();
 
 const from = "13054338575";
-let msgTo = "18048140932";
-let msg = "Thank You For Your Order, It Is Now Ready For Pickup";
-let msgTo = $("#phone").val().trim();
+const msg = "Thank You For Your Order, It Is Now Ready For Pickup";
+
+// Getting the phone number and calling the sendMessage function
+module.exports = function (app) {
+  app.post("/api/checkout", function (req, res) {
+    console.log(req.body);
+    const phoneNumber = req.body.phoneNumber;
+    sendMessage(phoneNumber, msg);
+    res.status(200);
+  });
+};
 
 function sendMessage(msgTo, msg, cb) {
+  console.log("ln 17", process.env);
   const nexmo = new Nexmo({
     apiKey: process.env.API_KEY,
     apiSecret: process.env.API_SECRET,
   });
-
+  console.log("ln 20");
   nexmo.message.sendSms(from, msgTo, msg, (err, responseData) => {
     if (err) {
       console.log(err);
@@ -29,5 +39,3 @@ function sendMessage(msgTo, msg, cb) {
     }
   });
 }
-
-sendMessage(msgTo, msg);
