@@ -23,7 +23,43 @@
    width: 62px;
    height: 62px;
  }
+
+
+.social {
+  margin-left: 25px;
+}
+
+.network {
+  margin-top: 8px;
+}
+
+ .facebook {
+   height: 40px;
+   width: 40px;
+   border-radius: 5px;
+ }
  
+ .instagram {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+}
+
+.twitter {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+}
+
+.large-logo {
+
+  width: 200px;
+  height: 200px;
+  margin-top: 50px;
+  margin-left: 70px;
+
+}
+
  .sidenav-trigger {
    color: #26a69a;
  }
