@@ -1,18 +1,6 @@
 
 $(document).ready(function () {
 
-    const phoneInput = $("#icon_telephone").val().trim();
-    console.log(phoneInput);
-
-    // Collecting the phone number from the intake form in check-out.html
-    $("#checkout").on("click", function (event) {
-        event.preventDefault();
-        let msgTo = $("#phone").val().trim();
-        //  Need to validate the phone number, see if other characters can be filtered out, reg.ex?
-        console.log("yo' boy", msgTo);
-        sendMessageApi(msgTo);
-    });
-
     var currentUserId;
 
     $.get("/api/user_data").then(function(userData){
@@ -26,7 +14,7 @@ $(document).ready(function () {
     var orderDetails = [];
     var orderId;
     var price = [];
-    console.log(currentUserId)
+
     function lastOrder(){
 
     $.get("/api/order/" + currentUserId).then(function (data) {
@@ -75,7 +63,7 @@ $(document).ready(function () {
                 
                 $("#totalDisplay").append(`
 
-                <h6><strong>Your total is : <span>${newTotalPrice}</span></strong></h6>
+                <h6><strong>Your total is : <span>$${newTotalPrice}</span></strong></h6>
         
                 `);
        
@@ -140,7 +128,7 @@ $(document).ready(function () {
     function updateQuantity(){
         
         var menuTitle = $(this).data("title");
-        console.log(menuTitle)
+      
          for (var i = 0; i < orderDetails.length; i++){
 
             if(orderDetails[i].menu_items === menuTitle){
@@ -180,9 +168,9 @@ $(document).ready(function () {
                 } 
             }
 
-            const filteredPhoneNumber = phoneNumber.join("");
+            const filteredPhoneNumber = 1 + phoneNumber.join("");
             sendMessageApi(filteredPhoneNumber);
-           // window.location.href = "./order-review.html";
+           window.location.href = "./order-review.html";
         });
 
         $(document).on("change", ".quantity", updateQuantity);
