@@ -1,20 +1,16 @@
 $(document).ready(function () {
-  // Collecting the phone number from the intake form in check-out.html
-  $("#checkout").on("click", function (event) {
-    event.preventDefault();
-    let msgTo = $("#phone").val().trim();
-    //  Need to validate the phone number, see if other characters can be filtered out, reg.ex?
-    console.log("yo' boy", msgTo);
-    sendMessageApi(msgTo);
-  });
-  // Send phone number to api-send-sms-routes.js
-  function sendMessageApi(phoneNumber) {
-    $.post("/api/checkout", {
-      phoneNumber: phoneNumber,
-    }).then(function (data) {
-      console.log(data);
+
+    const phoneInput = $("#icon_telephone").val().trim();
+    console.log(phoneInput);
+
+    // Collecting the phone number from the intake form in check-out.html
+    $("#checkout").on("click", function (event) {
+        event.preventDefault();
+        let msgTo = $("#phone").val().trim();
+        //  Need to validate the phone number, see if other characters can be filtered out, reg.ex?
+        console.log("yo' boy", msgTo);
+        sendMessageApi(msgTo);
     });
-  }
 
   var currentUserId;
 
@@ -23,38 +19,38 @@ $(document).ready(function () {
     lastOrder();
   });
 
-  var orderDetails = [];
-  var totalQuantity;
-  var totalPrice;
-  var orderId;
-  var price = [];
+    });
+
+   
+    var orderDetails = [];
+    var orderId;
+    var price = [];
+    console.log(currentUserId)
+    function lastOrder(){
 
   function lastOrder() {
     $.get("/api/order/" + currentUserId).then(function (data) {
-      console.log(data);
-      renderLastOrder(data);
-      orderId = data[data.length - 1].id;
+       
+        renderLastOrder(data);
+        orderId = data[data.length - 1].id;
+        
     });
   }
 
-  $(document).on("click", ".removeItem", removeItem);
-
-  $("#submitOrder").on("click", function () {
-    window.location.href = "./order-review.html";
-  });
-
-  $(document).on("change", ".quantity", updateQuantity);
-
-  function renderLastOrder(data) {
-    $("#orders").empty();
-    $("#totalDisplay").empty();
+    function renderLastOrder(data) {
 
     orderDetails = JSON.parse(data[data.length - 1].menu_items);
     totalQuantity = data[data.length - 1].quantity;
     totalPrice = data[data.length - 1].total_price;
     console.log(orderDetails);
 
-    var newTotalPrice;
+        orderDetails = JSON.parse(data[data.length - 1].menu_items);
+        totalQuantity = data[data.length - 1].quantity;
+        totalPrice = data[data.length - 1].total_price;
+        
+        var newTotalPrice;
+       
+        for (var i = 0; i < orderDetails.length; i++) {
 
     for (var i = 0; i < orderDetails.length; i++) {
       price.push(orderDetails[i].price * orderDetails[i].quantities);
@@ -82,7 +78,7 @@ $(document).ready(function () {
 
     $("#totalDisplay").append(`
 
-                        <span>${newTotalPrice}</span>
+                <h6><strong>Your total is : <span>${newTotalPrice}</span></strong></h6>
         
                 `);
   }
@@ -114,27 +110,62 @@ $(document).ready(function () {
       total_price: newTotal,
     };
 
-    $.ajax({
-      url: "/api/orders/" + orderId,
-      type: "PUT",
-      data: orderObj,
-    }).then(function (response) {
-      location.reload();
-    });
-  }
+    function quantitySum(total, orderDetail){
+        
+        return total + orderDetail;
+      }  
 
-  function quantitySum(total, orderDetail) {
-    return total + orderDetail;
-  }
+    function updateQuantity(){
+        
+        var menuTitle = $(this).data("title");
+        console.log(menuTitle)
+         for (var i = 0; i < orderDetails.length; i++){
 
-  function updateQuantity() {
-    var menuTitle = $(this).data("title");
-    console.log(menuTitle);
-    for (var i = 0; i < orderDetails.length; i++) {
-      if (orderDetails[i].menu_items === menuTitle) {
-        orderDetails[i].quantities = $(this).val();
-      }
+            if(orderDetails[i].menu_items === menuTitle){
+
+                orderDetails[i].quantities = $(this).val();
+                
+            }
+         }
+            updateDB();
+            
+        } 
+
+        // Send phone number to api-send-sms-routes.js
+    function sendMessageApi(phoneNumber) {
+        $.post("/api/checkout", {
+        phoneNumber: phoneNumber,
+        }).then(function (data) {
+        console.log(data);
+        });
     }
-    updateDB();
-  }
+
+        //On click functions
+
+        $(document).on("click", ".removeItem", removeItem);
+
+        $("#submitOrder").on("click", function(e){
+            
+            const phoneInput = $("#icon_telephone").val().trim();
+            let phoneNumber = [];
+           
+            for (var i = 0; i < phoneInput.length; i++){
+
+                if(!isNaN(phoneInput[i])){
+
+                    phoneNumber.push(phoneInput.substr(i, 1));
+
+                } 
+            }
+
+            const filteredPhoneNumber = phoneNumber.join("");
+            sendMessageApi(filteredPhoneNumber);
+           // window.location.href = "./order-review.html";
+        });
+
+        $(document).on("change", ".quantity", updateQuantity);
 });
+
+
+           
+
