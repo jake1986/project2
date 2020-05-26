@@ -16,10 +16,11 @@ $(document).ready(function () {
     var orderId;
     var price = [];
     
+    
     function lastOrder(){
 
     $.get("/api/order/" + currentUserId).then(function (data) {
-        console.log(data)
+        
         renderLastOrder(data);
         orderId = data[data.length - 1].id;
         
@@ -34,7 +35,7 @@ function renderLastOrder(data) {
     orderDetails = JSON.parse(data[data.length - 1].menu_items);
     totalQuantity = data[data.length - 1].quantity;
     totalPrice = data[data.length - 1].total_price;
-    console.log(data)
+    
     
     var newTotalPrice;
    
@@ -58,10 +59,15 @@ function renderLastOrder(data) {
             
             $("#totalDisplay").append(`
 
-                    <span>${newTotalPrice}</span>
+                    <h6><strong>Your total is : <span>${newTotalPrice}</span></strong></h6>
     
             `);
    
 };
+
+function quantitySum(total, orderDetail){
+        
+    return total + orderDetail;
+  }  
 
 });
