@@ -29,7 +29,7 @@ module.exports = function (app) {
 
     db.Orders.findAll({ include : db.User , where : { UserId : req.params.id} }).then(function(response){
       res.json(response);
-      console.log(response)
+      
     });
 
   });
