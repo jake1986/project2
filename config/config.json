@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "", 
-    "database": "goodtogo_db",
-    "host": "localhost",
+    "username": "ulaq6ikneztd1pg1",
+    "password": "ltt0ldv9o9phw9qq", 
+    "database": "acyoia8rfqrtma5n",
+    "host": "c584md9egjnm02sk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
@@ -14,9 +14,6 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "ulaq6ikneztd1pg1",
-    "password": "ltt0ldv9o9phw9qq", 
-    "database": "acyoia8rfqrtma5n",
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
