@@ -10,6 +10,7 @@
  nav .brand-logo {
    color: #444;
  }
+ 
 
  h1 {
    font-family: light-italic;
@@ -17,6 +18,10 @@
  
  p {
    line-height: 2rem;
+ }
+
+ .background {
+   background-image: url(/public/img/restaurant-background.jpg);
  }
  
  .car {
