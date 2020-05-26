@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "@rTyF1986",
+    "password": "",
     "database": "goodtogo_db",
     "host": "localhost",
     "dialect": "mysql"
