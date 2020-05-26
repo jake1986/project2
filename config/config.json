@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "@rTyF1986",
+    "password": "", 
     "database": "goodtogo_db",
     "host": "localhost",
     "dialect": "mysql"
@@ -14,7 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable":"JAWSDB_URL",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }

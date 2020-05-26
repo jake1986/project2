@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Sign-Up: Good-To-Go</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="./stylesheets/normalize.css" type="text/css" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"> -->
-  <!-- <link href="stylesheets/style.css" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="./stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="./stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="./stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
-
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="./index.html" class="brand-logo"><img class="car" src="https://www.newbrunswick.com/images/pub/curbside_pickup.png"></a>
+      <a id="logo-container" href="./index.html" class="brand-logo"><img class="car"
+          src="https://www.newbrunswick.com/images/pub/curbside_pickup.png"></a>
       <ul class="right hide-on-med-and-down">
-        <!-- <li><a href="#">Navbar Link</a></li> -->
         <li><a href="./signup.html">Sign Up</a></li>
         <li><a href="./login.html">Login</a></li>
         <li><a href="./order.html">Menu</a></li>
         <li><a href="./check-out.html"><i class="center blue-text material-icons">shopping_cart</i></a></li>
       </ul>
-
       <ul id="nav-mobile" class="sidenav">
-        <!-- <li><a href="#">Navbar Link</a></li> -->
         <li><a href="./signup.html">Sign Up</a></li>
         <li><a href="./login.html">Login</a></li>
         <li><a href="./order.html">Menu</a></li>
@@ -35,11 +29,6 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-  <!-- <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
-    </div> -->
   </nav>
   <div class="container">
     <div class="row">
@@ -47,12 +36,12 @@
         <h2>Sign Up Form</h2>
         <form class="signup">
           <div class="form-group">
-            <label for="first_name">First Name</label>
-            <input type="name" class="form-control" id="firstName-input" placeholder="First Name">
+            <label for="firstName-input">First Name</label>
+            <input type="text" class="form-control" id="firstName-input" placeholder="First Name">
           </div>
           <div class="form-group">
-            <label for="last_name">Last Name</label>
-            <input type="name" class="form-control" id="lastName-input" placeholder="Last Name">
+            <label for="lastName-input">Last Name</label>
+            <input type="text" class="form-control" id="lastName-input" placeholder="Last Name">
           </div>
           <div class="form-group">
             <label for="email">Email address</label>
@@ -73,10 +62,26 @@
       </div>
     </div>
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/signup.js"></script>
-
+  <div class="col l3 s12">
+    <h5 class="connect white-text">Connect</h5>
+    <ul class="social">
+      <li><a href="/"><img class="network facebook" src="./icons/facebook+icon.jpg" alt="fb-icon"></a></li>
+      <li> <a href="/"><img class="network instagram" src="./icons/instagram.jpeg" alt="insta-icon"></a></li>
+      <li><a href="/"><img class="network twitter" src="./icons/twitter.jpg" alt="twitter-icon"></a></li>
+      <li><a href="/"><img class="network yelp" src="./icons/yelp.png" alt="yelp-icon"></a></li>
+    </ul>
+  </div>
+  <div class="footer-logo col l3 s12">
+    <img class="large-logo" src="https://www.newbrunswick.com/images/pub/curbside_pickup.png">
+  </div>
+  </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      Made by <strong>&copy;Team 6 2020</strong>
+    </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
 </body>
-
 </html>

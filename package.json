@@ -1,7 +1,7 @@
 {
   "name": "project2",
   "version": "1.0.0",
-  "description": "",
+  "description": "* [Description](#Description) * [Installation](#Install)  * [Site Demo](#Demo)  * [Usage](#Usage) * [Github](#Github) * [Contact](#Contact) ---",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,6 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/Brewtoga/project2.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {

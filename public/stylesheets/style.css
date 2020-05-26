@@ -23,7 +23,38 @@
    width: 62px;
    height: 62px;
  }
- 
+
+
+.social {
+  margin-left: 25px;
+  
+}
+
+.network {
+  margin-top: 8px;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+}
+
+.large-logo {
+
+  width: 200px;
+  height: 200px;
+  margin-top: 50px;
+  margin-left: 70px;
+
+}
+
+.mid-arrow {
+  margin-top: 20px;
+}
+
+.fixed {
+  position: fixed;
+  z-index: 2;
+}
+
  .sidenav-trigger {
    color: #26a69a;
  }
