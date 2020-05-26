@@ -23,15 +23,25 @@ module.exports = function (app) {
 
   });
 
-  app.get("/api/order", function (req, res) {
+  app.get("/api/order/:id", function(req, res){
 
-    db.Orders.findAll({
-      include: db.User
+    console.log(req.params.id);
 
-    }).then(function (response) {
+    db.Orders.findAll({ include : db.User , where : { UserId : req.params.id} }).then(function(response){
       res.json(response);
     });
 
   });
 
-}
+  app.put("/api/orders/:id", function(req, res){
+    
+    db.Orders.update(req.body , {
+      where : {
+        id : req.params.id
+      }
+    }).then(function(data){
+      res.json(data);
+    });
+  });
+
+};
