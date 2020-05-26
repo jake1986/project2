@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Members: Good-To-Go</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"> -->
+  <!-- <link href="stylesheets/style.css" rel="stylesheet"> -->
   <link href="./stylesheets/normalize.css" type="text/css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="./stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="./stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
+
 <body>
   <nav class="fixed white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="./index.html" class="brand-logo"><img class="car" src="https://www.newbrunswick.com/images/pub/curbside_pickup.png"></a>
       <ul class="right hide-on-med-and-down">
+        <!-- <li><a href="#">Navbar Link</a></li> -->
         <li><a href="./signup.html">Sign Up</a></li>
         <li><a href="./login.html">Login</a></li>
         <li><a href="./members.html">Members</a></li>
         <li><a href="./order.html">Order</a></li>
         <li><a href="./check-out.html"><i id="cartBtn" class="center blue-text material-icons">shopping_cart</i></a></li>
       </ul>
+
       <ul id="nav-mobile" class="sidenav">
+        <!-- <li><a href="#">Navbar Link</a></li> -->
         <li><a href="./signup.html">Sign Up</a></li>
         <li><a href="./login.html">Login</a></li>
         <li><a href="./members.html">Members</a></li>
@@ -30,10 +37,21 @@
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
   </nav>
+    <br>
+
+  
   <div class="container">
-    <div>If you would like a text for when your order is ready for pickup, enter your phone number.</div>
+    <div style="margin-top: 100px;" class="row ">
+      <h6><strong>Please enter your phone number to receive text upddates on your order.</strong></h6>  
+      <div class="input-field col s6">
+        <i class="material-icons prefix">phone</i>
+        <input id="icon_telephone" type="tel" class="validate" placeholder="Phone number">
+        <label for="icon_telephone"></label>
+      </div>
+    </div>
+   <div class="divider"></div>
     <div class="row">
-      <div class= "col s8">
+      <div class= "col s12">
         <table>
           <thead>
             <tr>
@@ -43,21 +61,26 @@
           </thead>
              <tbody id="orders"></tbody>
           </table>
+          <hr>
+          <h6 id="totalDisplay"></h6>
+          <hr>
           <br>
           <a id="submitOrder" class="waves-effect waves-light btn-small">Submit Order</a>
-      </div>
-      <div class= "col s4">
-        <h6>Total :</h6>
-        <hr>
-        <h6 id="totalDisplay"></h6>
-      </div>
+        </div>
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/checkout.js"></script>
+
 </body>
+
     <div class="footer-copyright">
       <div class="container">
-        Made by <strong>&copy;Team 6 2020</strong>
+      Made by <strong>&copy;Team 6 2020</strong>
+
     </div>
+
+    <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="./js/materialize.js"></script>
     <script src="./js/init.js"></script>
