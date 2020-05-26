@@ -6,13 +6,26 @@
  * Made By MaterializeCSS.com
  */
 
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
+ nav ul a,
+ nav .brand-logo {
+   color: #444;
+ }
 
-h1 {
-  font-family: light-italic;
+ h1 {
+   font-family: light-italic;
+ }
+ 
+ p {
+   line-height: 2rem;
+ }
+
+ .background {
+   background-image: url(/public/img/restaurant-background.jpg);
+ }
+ 
+ .car {
+   width: 62px;
+   height: 62px;
 }
 
 p {
