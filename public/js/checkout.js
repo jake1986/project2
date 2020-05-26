@@ -1,6 +1,9 @@
 
 $(document).ready(function () {
 
+    const phoneInput = $("#icon_telephone").val().trim();
+    console.log(phoneInput);
+
     // Collecting the phone number from the intake form in check-out.html
     $("#checkout").on("click", function (event) {
         event.preventDefault();
@@ -9,14 +12,6 @@ $(document).ready(function () {
         console.log("yo' boy", msgTo);
         sendMessageApi(msgTo);
     });
-    // Send phone number to api-send-sms-routes.js
-    function sendMessageApi(phoneNumber) {
-        $.post("/api/checkout", {
-        phoneNumber: phoneNumber,
-        }).then(function (data) {
-        console.log(data);
-        });
-    }
 
     var currentUserId;
 
@@ -29,29 +24,18 @@ $(document).ready(function () {
 
    
     var orderDetails = [];
-    var totalQuantity;
-    var totalPrice;
     var orderId;
     var price = [];
-    
+    console.log(currentUserId)
     function lastOrder(){
 
     $.get("/api/order/" + currentUserId).then(function (data) {
-        console.log(data)
+       
         renderLastOrder(data);
         orderId = data[data.length - 1].id;
         
     });
 }
-
-    $(document).on("click", ".removeItem", removeItem);
-
-   $("#submitOrder").on("click", function(){
-       
-        window.location.href = "./order-review.html";
-   })
-
-    $(document).on("change", ".quantity", updateQuantity);
 
     function renderLastOrder(data) {
 
@@ -61,7 +45,6 @@ $(document).ready(function () {
         orderDetails = JSON.parse(data[data.length - 1].menu_items);
         totalQuantity = data[data.length - 1].quantity;
         totalPrice = data[data.length - 1].total_price;
-        console.log(orderDetails)
         
         var newTotalPrice;
        
@@ -92,7 +75,7 @@ $(document).ready(function () {
                 
                 $("#totalDisplay").append(`
 
-                        <span>${newTotalPrice}</span>
+                <h6><strong>Your total is : <span>${newTotalPrice}</span></strong></h6>
         
                 `);
        
@@ -169,7 +152,42 @@ $(document).ready(function () {
             updateDB();
             
         } 
+
+        // Send phone number to api-send-sms-routes.js
+    function sendMessageApi(phoneNumber) {
+        $.post("/api/checkout", {
+        phoneNumber: phoneNumber,
+        }).then(function (data) {
+        console.log(data);
+        });
+    }
+
+        //On click functions
+
+        $(document).on("click", ".removeItem", removeItem);
+
+        $("#submitOrder").on("click", function(e){
+            
+            const phoneInput = $("#icon_telephone").val().trim();
+            let phoneNumber = [];
+           
+            for (var i = 0; i < phoneInput.length; i++){
+
+                if(!isNaN(phoneInput[i])){
+
+                    phoneNumber.push(phoneInput.substr(i, 1));
+
+                } 
+            }
+
+            const filteredPhoneNumber = phoneNumber.join("");
+            sendMessageApi(filteredPhoneNumber);
+           // window.location.href = "./order-review.html";
+        });
+
+        $(document).on("change", ".quantity", updateQuantity);
 });
+
 
            
 
