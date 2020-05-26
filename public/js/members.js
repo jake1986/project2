@@ -37,7 +37,7 @@ $(document).ready(function() {
           }
           else if (menuOptions[i] === "side"){
 
-            let drinkImg = ["mixyourownmimosa.jpeg", "coffee.jpeg", "cinnamonrolls.jpeg", "smokedtroutdeviledeggs.jpeg", "chesapeakequiche.jpeg"];
+            let drinkImg = ["smokegoudagrits.jpeg", "applesmokedbacon.jpeg", "brunchpotatoesjpg.jpeg", "sausagelinks.jpeg", "freshfruit.jpeg"];
             renderMenuItems (sidesData, "#sidesDisplay", drinkImg);
 
           }
