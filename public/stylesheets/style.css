@@ -33,7 +33,7 @@ p {
 }
 
 .background {
-  background-image: url(/public/img/restaurant-background.jpg);
+  background-image: url("../img/restaurant-background.jpg");
 }
 
 .car {
