@@ -46,13 +46,10 @@
 
 }
 
-.mid-arrow {
-  margin-top: 20px;
-}
-
 .fixed {
   position: fixed;
   z-index: 2;
+  overflow: hidden;
 }
 
  .sidenav-trigger {
