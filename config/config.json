@@ -1,9 +1,16 @@
 {
   "development": {
+<<<<<<< HEAD
     "username": "root",
     "password": "", 
     "database": "goodtogo_db",
     "host": "localhost",
+=======
+    "username": "ulaq6ikneztd1pg1",
+    "password": "blyjbnpvqxj8gx1",
+    "database": "ulaq6ikneztd1pg1",
+    "host": "c584md9egjnm02sk.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+>>>>>>> 3b00462e34b2fceb5c247c7c1d0110f94b639909
     "dialect": "mysql"
   },
   "test": {

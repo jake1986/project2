@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
     const phoneInput = $("#icon_telephone").val().trim();
@@ -13,12 +12,12 @@ $(document).ready(function () {
         sendMessageApi(msgTo);
     });
 
-    var currentUserId;
+  var currentUserId;
 
-    $.get("/api/user_data").then(function(userData){
-        
-        currentUserId = userData.id
-        lastOrder();
+  $.get("/api/user_data").then(function (userData) {
+    currentUserId = userData.id;
+    lastOrder();
+  });
 
     });
 
@@ -29,18 +28,21 @@ $(document).ready(function () {
     console.log(currentUserId)
     function lastOrder(){
 
+  function lastOrder() {
     $.get("/api/order/" + currentUserId).then(function (data) {
        
         renderLastOrder(data);
         orderId = data[data.length - 1].id;
         
     });
-}
+  }
 
     function renderLastOrder(data) {
 
-        $("#orders").empty();
-        $("#totalDisplay").empty();
+    orderDetails = JSON.parse(data[data.length - 1].menu_items);
+    totalQuantity = data[data.length - 1].quantity;
+    totalPrice = data[data.length - 1].total_price;
+    console.log(orderDetails);
 
         orderDetails = JSON.parse(data[data.length - 1].menu_items);
         totalQuantity = data[data.length - 1].quantity;
@@ -50,9 +52,10 @@ $(document).ready(function () {
        
         for (var i = 0; i < orderDetails.length; i++) {
 
-            price.push(orderDetails[i].price * orderDetails[i].quantities);
+    for (var i = 0; i < orderDetails.length; i++) {
+      price.push(orderDetails[i].price * orderDetails[i].quantities);
 
-                let orderDetailsDisplay = (`
+      let orderDetailsDisplay = `
 
                 <tr>
                 <td>${orderDetails[i].menu_items}</td>
@@ -67,69 +70,44 @@ $(document).ready(function () {
                 <td><a data-menuitem = "${orderDetails[i].menu_items}" class="waves-effect waves-light btn-small removeItem">Remove Item</a></td>
                 </tr>
                     
-                `);
-                $("#orders").append(orderDetailsDisplay);
-            };
+                `;
+      $("#orders").append(orderDetailsDisplay);
+    }
 
-                newTotalPrice = price.reduce(quantitySum).toFixed(2);
-                
-                $("#totalDisplay").append(`
+    newTotalPrice = price.reduce(quantitySum).toFixed(2);
+
+    $("#totalDisplay").append(`
 
                 <h6><strong>Your total is : <span>${newTotalPrice}</span></strong></h6>
         
                 `);
-       
-    };
+  }
 
+  function removeItem() {
+    const item = $(this).data("menuitem");
 
-    function removeItem() {
+    for (var i = 0; i < orderDetails.length; i++) {
+      if (item === orderDetails[i].menu_items) {
+        orderDetails.splice(i, 1);
+      }
+    }
+    updateDB();
+  }
 
-        const item = $(this).data("menuitem");
-       
+  function updateDB() {
+    var menuItems = JSON.stringify(orderDetails);
+    var orderTotal = orderDetails.map(
+      (totals) => totals.quantities * totals.price
+    );
+    var newTotal = parseInt(orderTotal.reduce(quantitySum, 0).toFixed(2));
 
-        for (var i = 0; i < orderDetails.length; i++) {
+    var totalQ = orderDetails.map((quantity) => parseInt(quantity.quantities));
+    var totalQuantitySum = totalQ.reduce(quantitySum, 0);
 
-            if (item === orderDetails[i].menu_items) {
-
-                orderDetails.splice(i, 1);
-                
-            }
-            
-        }
-        updateDB();
-        
-    };
-
-    function updateDB() {
-
-
-        var menuItems = JSON.stringify(orderDetails);
-        var orderTotal = orderDetails.map(totals => totals.quantities * totals.price);
-        var newTotal = parseInt(orderTotal.reduce(quantitySum, 0).toFixed(2));
-        
-       
-        var totalQ = orderDetails.map(quantity => parseInt(quantity.quantities));
-        var totalQuantitySum =  totalQ.reduce(quantitySum, 0);
-        
-        var orderObj = {
-
-            menu_items : menuItems,
-            quantity : totalQuantitySum,
-            total_price : newTotal
-
-        }
-      
-        $.ajax({
-
-            url : "/api/orders/" + orderId,
-            type : "PUT",
-            data : orderObj
-
-        }).then(function(response){
-            location.reload();
-            
-        });
-       
+    var orderObj = {
+      menu_items: menuItems,
+      quantity: totalQuantitySum,
+      total_price: newTotal,
     };
 
     function quantitySum(total, orderDetail){
