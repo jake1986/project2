@@ -5,13 +5,12 @@ $(document).ready(function () {
 
     $.get("/api/menus").then(function (menuData) {
 
-        console.log(menuData);
         renderMenu(menuData);
     });
 
     function renderMenu(menuData) {
 
-        let menuImg = ["cinnamonrolls.jpeg", "smokedtroutdeviledeggs.jpeg", "chesapeakequiche.jpeg", "lemonblueberrypancake.jpeg",  "chickenandwaffles.jpeg", "shrimpbaconpestoomlet.jpeg", "beefbriskethash.jpeg", "biscuitsngravy.jpeg", "friedeggblt.jpeg", "pimentocheeseblt.jpeg", "mixyourownmimosa.jpeg", "coffee.jpeg"];
+        let menuImg = ["cinnamonrolls.jpeg", "smokedtroutdeviledeggs.jpeg", "chesapeakequiche.jpeg", "lemonblueberrypancake.jpeg",  "chickenandwaffles.jpeg", "shrimpbaconpestoomlet.jpeg", "beefbriskethash.jpeg", "biscuitsngravy.jpeg", "friedeggblt.jpeg", "pimentocheeseblt.jpeg", "mixyourownmimosa.jpeg", "coffee.jpeg","smokegoudagrits.jpeg", "applesmokedbacon.jpeg", "brunchpotatoesjpg.jpeg", "sausagelinks.jpeg", "freshfruit.jpeg"];
 
 
         for (var i = 0; i < menuData.length; i++) {
