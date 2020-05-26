@@ -75,7 +75,7 @@ $(document).ready(function () {
                 
                 $("#totalDisplay").append(`
 
-                <h6><strong>Your total is : <span>${newTotalPrice}</span></strong></h6>
+                <h6><strong>Your total is : <span>$${newTotalPrice}</span></strong></h6>
         
                 `);
        
@@ -180,9 +180,9 @@ $(document).ready(function () {
                 } 
             }
 
-            const filteredPhoneNumber = phoneNumber.join("");
+            const filteredPhoneNumber = 1 + phoneNumber.join("");
             sendMessageApi(filteredPhoneNumber);
-           // window.location.href = "./order-review.html";
+           window.location.href = "./order-review.html";
         });
 
         $(document).on("change", ".quantity", updateQuantity);
