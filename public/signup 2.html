@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign-Up: Good-To-Go</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./stylesheets/normalize.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./stylesheets/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="./stylesheets/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body class="background">
+  <nav class="blue-grey lighten-5" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="./index.html" class="brand-logo"><img class="car"
+          src="https://www.newbrunswick.com/images/pub/curbside_pickup.png"></a>
+      <ul class="right hide-on-med-and-down">
+        
+        <li><a href="./login.html">Login</a></li>
+        <li><a href="./order.html">Menu</a></li>
+        
+      </ul>
+      <ul id="nav-mobile" class="sidenav">
+       
+        <li><a href="./login.html">Login</a></li>
+        <li><a href="./order.html">Menu</a></li>
+       
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  </nav>
+  <br>
+  <div class="container">
+    <div class="row">
+      <div class="col md 6 col md offset 3">
+        <h2 class="grey-text text-lighten-1">Sign Up Form</h2>
+        <form class="signup">
+          <div class="form-group">
+            <label for="firstName-input">First Name</label>
+            <input type="text" class="form-control" id="firstName-input" placeholder="First Name">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="lastName-input">Last Name</label>
+            <input type="text" class="form-control" id="lastName-input" placeholder="Last Name">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
+          <button type="submit" class="btn btn-default deep-orange">Sign Up</button>
+          <p>log in <a href="./login.html">here</a></p>
+        </form>
+        <br />
+        
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer brown darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Team Contact</h5>
+          <p class="grey-text text-lighten-4">George Brewton: sobeeju@gmail.com</p>
+          <p class="grey-text text-lighten-4">Hugo Costa: costaphugo1@gmail.com</p>
+          <p class="grey-text text-lighten-4">Abdu Mussa: abdurekmjob@gmail.com</p>
+          <p class="grey-text text-lighten-4">Anthony Osiol: osiol.anthony@gmail.com</p>
+          <p class="grey-text text-lighten-4">Jake Rhoads: jake.rhoads@gmail.com</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="connect white-text">Connect</h5>
+          <ul class="social">
+            <li><a href="/"><img class="network facebook" src="./icons/facebook+icon.jpg" alt="fb-icon"></a></li>
+            <li> <a href="/"><img class="network instagram" src="./icons/instagram.jpeg" alt="insta-icon"></a></li>
+            <li><a href="/"><img class="network twitter" src="./icons/twitter.jpg" alt="twitter-icon"></a></li>
+            <li><a href="/"><img class="network yelp" src="./icons/yelp.png" alt="yelp-icon"></a></li>
+          </ul>
+
+        </div>
+        <div class="footer-logo col l3 s12">
+
+          <img class="large-logo" src="https://www.newbrunswick.com/images/pub/curbside_pickup.png">
+
+        </div>
+      </div>
+
+
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Made by <strong>&copy;Team 6 2020</strong>
+
+      </div>
+  </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
+</body>
+</html>

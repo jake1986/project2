@@ -1,0 +1,120 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ nav ul a,
+ nav .brand-logo {
+   color: #444;
+ }
+
+ h1 {
+   font-family: light-italic;
+ }
+ 
+ p {
+   line-height: 2rem;
+ }
+
+ .background {
+   background-image: url(/public/img/restaurant-background.jpg);
+ }
+ 
+ .car {
+   width: 62px;
+   height: 62px;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.background {
+  background-image: url("../img/restaurant-background.jpg");
+}
+
+.car {
+  width: 62px;
+  height: 62px;
+}
+
+.social {
+  margin-left: 25px;
+}
+
+.network {
+  margin-top: 8px;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+}
+
+.large-logo {
+  width: 200px;
+  height: 200px;
+  margin-top: 50px;
+  margin-left: 70px;
+}
+
+.fixed {
+  position: fixed;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+.parallax-container .section {
+  width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+#gtg {
+  margin-top: 80px;
+}
+
+#order-footer {
+  margin-top: 135px;
+}
+
+/* body {
+  margin: 0;
+  padding: 0;
+} */
